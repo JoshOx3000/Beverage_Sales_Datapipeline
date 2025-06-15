@@ -1,0 +1,9 @@
+﻿sale_id,store_id,product_name,category,quantity_sold,unit_price,total_sale,sale_timestamp
+1001,201,Orange Juice,Juice,12,2.5,30,6/13/2025 8:15
+1002,202,Green Tea,Tea,5,3,15,6/13/2025 9:45
+1003,201,Cola Classic,Soda,20,1.25,25,6/13/2025 11:05
+1004,203,Sparkling Water,Water,8,1.5,12,6/13/2025 12:30
+1005,204,Cold Brew Coffee,Coffee,6,4,24,6/13/2025 14:10
+1006,202,Herbal Tea,Tea,10,2.75,27.5,6/13/2025 16:00
+1007,204,Sports Drink,Energy,15,2,30,6/13/2025 18:25
+1008,201,Lemonade,Juice,9,2,18,6/13/2025 19:40
