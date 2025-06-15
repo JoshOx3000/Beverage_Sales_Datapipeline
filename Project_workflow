@@ -1,0 +1,85 @@
+✅ Step-by-Step Project Workflow
+🔹 STEP 1: Prepare Your Sample Data
+Create a file named beverage_sales.csv
+
+Use the sample data we discussed
+
+Save it locally and/or upload to Azure Blob Storage container (e.g., sales_data)
+
+🔹 STEP 2: Set Up Azure SQL Database
+Go to Azure Portal
+
+Create an Azure SQL Server and SQL Database
+
+Connect using SQL Server Management Studio (SSMS)
+
+Create table with:
+
+sql
+Copy
+Edit
+CREATE TABLE BeverageSales (
+    sale_id INT PRIMARY KEY,
+    store_id INT,
+    product_name NVARCHAR(100),
+    category NVARCHAR(50),
+    quantity_sold INT,
+    unit_price DECIMAL(5,2),
+    total_sale DECIMAL(6,2),
+    sale_timestamp DATETIME,
+    sale_date AS CAST(sale_timestamp AS DATE) PERSISTED,
+    sale_hour AS DATEPART(HOUR, sale_timestamp) PERSISTED
+);
+🔹 STEP 3: Upload CSV to Blob Storage
+Create a Storage Account in Azure
+
+Create a container (e.g., sales_data)
+
+Upload beverage_sales.csv to this container
+
+🔹 STEP 4: Create Azure Data Factory Pipeline
+In Azure Portal, create an Azure Data Factory
+
+Create Linked Services:
+
+Azure Blob Storage (source)
+
+Azure SQL Database (sink)
+
+Create Datasets:
+
+Source: CSV in Blob
+
+Sink: Azure SQL table
+
+Create a Copy Data Activity pipeline
+
+Map columns from CSV to table
+
+Add an event-based trigger:
+
+Trigger pipeline when a file is added to sales_data container
+
+🔹 STEP 5: Test the ETL Process
+Upload a new CSV file to the Blob container
+
+Watch the pipeline trigger and run
+
+Confirm records in BeverageSales table
+
+🔹 STEP 6: Document the Project for GitHub
+Create the following files:
+
+📁 Folder Structure:
+bash
+Copy
+Edit
+/beverage-sales-etl
+│
+├── README.md
+├── LICENSE
+├── beverage_sales.csv
+├── sql_create_table.sql
+├── /screenshots/
+│   ├── pipeline_design.png
+│   └── blob_upload.png
