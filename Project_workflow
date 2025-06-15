@@ -2,7 +2,7 @@
 🔹 STEP 1: Prepare Your Sample Data
 Create a file named beverage_sales.csv
 
-Use the sample data we discussed
+Use the sample data we 'sales_data.csv'
 
 Save it locally and/or upload to Azure Blob Storage container (e.g., sales_data)
 
